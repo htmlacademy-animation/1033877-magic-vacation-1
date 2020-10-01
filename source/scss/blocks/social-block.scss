@@ -17,8 +17,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
-  transition: all 0.35s ease,
-  transform 0.5s cubic-bezier(.7, 0, .26, .98);
+  transition: all 0.35s ease;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -37,8 +36,13 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transform: translate(-50%, -50%) scale(0);
     transition: all 0.35s ease,
-    transform 0.5s cubic-bezier(.7, 0, .26, .98);
+    transform 0.6s cubic-bezier(0.82, 0.04, 0.21, 1.44);
+  }
+
+  .page-load &:before {
+    transform: translate(-50%, -50%) scale(1);
   }
 
   svg {
