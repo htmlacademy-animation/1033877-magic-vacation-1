@@ -1,5 +1,10 @@
 .screen {
-  position: relative;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
   overflow: hidden;
   display: flex;
@@ -39,6 +44,21 @@
   z-index: 1;
 }
 
+.screen__bg {
+  background-color: $c-dark;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  z-index: -1;
+
+  .active & {
+    transition: height 0.5s;
+    height: 100%;
+  }
+}
+
 .screen__footer {
   position: absolute;
   bottom: 0;
@@ -53,7 +73,7 @@
   transition: transform 0.5s $easeOutFn,
   opacity 0.5s $easeOutFn;
 
-  .page-load & {
+  .active & {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
@@ -314,7 +334,16 @@
 }
 
 .screen--prizes {
-  background-color: $c-dark;
+  &> :not(.screen__bg):not(.screen__footer) {
+    opacity: 0;
+  }
+
+  &.active {
+    &> :not(.screen__bg):not(.screen__footer) {
+      opacity: 1;
+      transition: opacity 0.5s ease-out 0.6s;
+    }
+  }
 }
 
 .screen--game {
