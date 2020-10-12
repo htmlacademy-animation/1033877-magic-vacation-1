@@ -225,20 +225,10 @@
     }
   }
 
-  &:nth-child(1) {
-    --rules-item-index: 0;
-  }
-
-  &:nth-child(2) {
-    --rules-item-index: 1;
-  }
-
-  &:nth-child(3) {
-    --rules-item-index: 2;
-  }
-
-  &:nth-child(4) {
-    --rules-item-index: 3;
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      --rules-item-index: #{$i - 1};
+    }
   }
 }
 
