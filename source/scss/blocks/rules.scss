@@ -237,7 +237,7 @@
   bottom: 8rem;
   right: 5.6rem;
   color: transparent;
-  transition: color 0.2s $easeOutCubic 0.3s;
+  transition: color 0.2s $easeOutCubic;
 
   &::before {
     right: 0;
