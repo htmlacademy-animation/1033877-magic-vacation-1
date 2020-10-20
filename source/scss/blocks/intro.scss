@@ -25,7 +25,7 @@
 
 .intro__title {
   margin: 0;
-  max-width: 99rem;
+  max-width: 100rem;
   text-transform: uppercase;
   font-family: $font-alt;
   font-weight: 400;
@@ -50,6 +50,32 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     font-size: 5rem;
   }
+}
+
+.intro__word {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-top: 2rem;
+
+  &:not(:first-child) {
+    margin-top: -5rem;
+
+    @media (max-width: $tablet) and (orientation: portrait) {
+      margin-top: -1rem;
+    }
+  }
+}
+
+.intro__word>span {
+  display: inline-block;
+  transform: translate3d(0, 15rem, 0);
+}
+
+.active .intro__word>span {
+  animation-name: movingLetters;
+  animation-timing-function: $easeFn;
+  animation-fill-mode: forwards;
 }
 
 .intro__content {
@@ -97,7 +123,7 @@
   opacity: 0;
   transform: translateY(15px);
 
-  .active & {
+  @include screenActive() {
     opacity: 1;
     transform: translateY(0);
   }
@@ -149,6 +175,12 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  opacity: 0;
+  transition: all 0.2s $easeInQuad 2s;
+
+  @include screenActive() {
+    opacity: 1;
+  }
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 16px;
@@ -162,11 +194,31 @@
   font-family: $font-alt;
   font-weight: 400;
   font-size: 4.8rem;
-  line-height: 0.906;
+  // line-height: 0.906;
+  line-height: 1;
   letter-spacing: -0.04em;
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 0 -5px;
     font-size: 48px;
   }
+}
+
+.intro__number {
+  display: inline-block;
+  margin-right: 5px;
+  padding-right: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.intro__number span {
+  display: inline-block;
+  transform: translate3d(0, 15rem, 0);
+}
+
+.active .intro__number>span {
+  animation-name: movingLetters;
+  animation-timing-function: $easeFn;
+  animation-fill-mode: forwards;
 }

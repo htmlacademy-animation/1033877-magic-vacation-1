@@ -1,8 +1,8 @@
 export default () => {
-  const lastRulesItemText = document.querySelector(`.rules__item:last-child p`);
+  const lastRulesItem = document.querySelector(`.rules__item:last-child`);
   const rulesLink = document.querySelector(`.rules__link`);
 
-  lastRulesItemText.addEventListener(`animationstart`, () => {
+  lastRulesItem.addEventListener(`animationend`, () => {
     rulesLink.classList.add(`rules__link--active`);
   });
 };
