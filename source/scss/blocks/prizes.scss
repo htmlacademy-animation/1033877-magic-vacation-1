@@ -28,7 +28,7 @@
   font-family: $font-alt;
   font-weight: 400;
   font-size: 4.8rem;
-  line-height: 0.906;
+  line-height: 0.96;
   letter-spacing: -0.04em;
 
   @media (min-width: $stop-scaling) {
@@ -51,6 +51,35 @@
   }
 }
 
+.prizes__word {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &:not(:first-child) {
+    margin-top: -5rem;
+
+    @media (max-width: $tablet) and (orientation: portrait) {
+      margin-top: -1rem;
+    }
+  }
+}
+
+.prizes__word>span {
+  display: inline-block;
+  transform: translate3d(0, 15rem, 0);
+
+  &:last-child {
+    padding-right: 2px;
+  }
+}
+
+.active .prizes__word>span {
+  animation-name: movingLetters;
+  animation-timing-function: $easeFn;
+  animation-fill-mode: forwards;
+}
+
 .prizes__lead {
   margin-left: 5.8rem;
   margin-bottom: -5.6rem;
@@ -58,6 +87,15 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  color: transparent;
+
+  @include screenActive() {
+    animation-name: showRulesLeadText;
+    animation-duration: 0.5s;
+    animation-timing-function: $easeOutCubic;
+    animation-delay: 0.7s;
+    animation-fill-mode: forwards;
+  }
 
   @media (min-width: $stop-scaling) {
     margin-left: 58px;
@@ -312,6 +350,14 @@
     margin-bottom: 0.3rem;
     width: 1rem;
     height: 1rem;
+
+    .active .prizes__item--journeys & {
+      animation-name: fadeInLeft;
+      animation-duration: 0.4s;
+      animation-timing-function: ease-out;
+      animation-delay: 4.2s;
+      animation-fill-mode: forwards;
+    }
 
     @media (min-width: $stop-scaling) {
       margin-left: 10px;
