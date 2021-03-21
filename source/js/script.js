@@ -11,6 +11,7 @@ import FullPageScroll from './modules/full-page-scroll';
 import loadPage from './modules/page-load';
 import rules from './modules/rules.js';
 import LetterAnimation from './modules/letter-animation.js';
+import prizes from './modules/prizes.js';
 
 // init modules
 mobileHeight();
@@ -23,6 +24,7 @@ form();
 social();
 loadPage();
 rules();
+prizes();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
@@ -30,3 +32,5 @@ fullPageScroll.init();
 new LetterAnimation(`.intro__title`, `intro__word`, 700, 500, 20).prePareText();
 new LetterAnimation(`.intro__date`, `intro__number`, 700, 1300, 20).prePareText();
 new LetterAnimation(`.rules__title`, `rules__word`, 700, 100, 25).prePareText();
+new LetterAnimation(`.slider__item-title`, `slider__item-word`, 500, 0, 25).prePareText();
+new LetterAnimation(`.prizes__title`, `prizes__word`, 700, 100, 15).prePareText();
