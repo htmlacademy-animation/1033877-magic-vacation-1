@@ -337,6 +337,7 @@
   .screen__wrapper {
     opacity: var(--screen-active);
     transition: opacity 0.35s ease-in 0.5s;
+    height: calc(100vh - 10px);
   }
 }
 
