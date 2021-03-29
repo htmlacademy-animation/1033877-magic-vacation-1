@@ -133,6 +133,10 @@
   align-items: flex-end;
   margin-top: auto;
 
+  @media (min-width: $stop-scaling) {
+    justify-content: center;
+  }
+
   @media (max-width: $tablet) and (orientation: portrait) {
     flex-direction: column;
     align-items: flex-start;
@@ -173,7 +177,7 @@
 
       @media (min-width: $stop-scaling) {
         left: -59px;
-        bottom: -14px;
+        //bottom: -14px;
         width: 268px;
       }
 
@@ -212,16 +216,20 @@
       width: 31.5rem;
 
       @media (min-width: $stop-scaling) {
-        width: 188px;
+        // width: 188px;
+        width: 290px;
+        margin-left: 0;
       }
 
       @media (max-width: $tablet) and (orientation: portrait) {
         margin-right: 1.3rem;
+        margin-left: 0;
         width: 10.211rem;
       }
 
       @media (max-width: $tablet) and (orientation: landscape) {
         width: 9.5rem;
+        margin-left: 0;
       }
 
       @media (max-width: $mobile) and (orientation: landscape) {
