@@ -168,12 +168,12 @@
     .prizes__icon {
       position: relative;
       left: -5.9rem;
-      bottom: -1.4rem;
-      width: 26.8rem;
+      //width: 26.8rem;
+      width: 26rem;
 
       @media (min-width: $stop-scaling) {
         left: -59px;
-        bottom: -14px;
+        //bottom: -14px;
         width: 268px;
       }
 
@@ -207,19 +207,25 @@
     }
 
     .prizes__icon {
-      width: 18.8rem;
+      // width: 18.8rem;
+      margin-left: -13rem;
+      width: 31.5rem;
 
       @media (min-width: $stop-scaling) {
-        width: 188px;
+        // width: 188px;
+        width: 290px;
+        margin-left: 0;
       }
 
       @media (max-width: $tablet) and (orientation: portrait) {
         margin-right: 1.3rem;
+        margin-left: 0;
         width: 10.211rem;
       }
 
       @media (max-width: $tablet) and (orientation: landscape) {
         width: 9.5rem;
+        margin-left: 0;
       }
 
       @media (max-width: $mobile) and (orientation: landscape) {
@@ -234,7 +240,8 @@
     }
 
     .prizes__icon {
-      width: 26rem;
+      //width: 26rem;
+      width: 28rem;
 
       @media (min-width: $stop-scaling) {
         width: 260px;
@@ -350,14 +357,6 @@
     margin-bottom: 0.3rem;
     width: 1rem;
     height: 1rem;
-
-    .active .prizes__item--journeys & {
-      animation-name: fadeInLeft;
-      animation-duration: 0.4s;
-      animation-timing-function: ease-out;
-      animation-delay: 4.2s;
-      animation-fill-mode: forwards;
-    }
 
     @media (min-width: $stop-scaling) {
       margin-left: 10px;
