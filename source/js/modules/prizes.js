@@ -7,6 +7,9 @@ export default () => {
   const prizeSecondaryImg = document.querySelector(`.secondary-award`);
   const prizeSecondarySvgPath = `img/secondary-award.svg`;
 
+  const prizeAdditionalImg = document.querySelector(`.additional-award`);
+  const prizeAdditionalSvgPath = `img/additional-award.svg`;
+
   let prizesAnimation = false;
 
   document.body.addEventListener(`screenChanged`, () => {
@@ -17,7 +20,11 @@ export default () => {
 
       setTimeout(() => {
         prizeSecondaryImg.src = `${prizeSecondarySvgPath}?${Math.random()}`;
-      }, 3700);
+      }, 3800);
+
+      setTimeout(() => {
+        prizeAdditionalImg.src = `${prizeAdditionalSvgPath}?${Math.random()}`;
+      }, 6000);
 
       prizesAnimation = true;
     }
