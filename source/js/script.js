@@ -12,6 +12,7 @@ import loadPage from './modules/page-load';
 import rules from './modules/rules.js';
 import LetterAnimation from './modules/letter-animation.js';
 import prizes from './modules/prizes.js';
+import counter from './modules/counter.js';
 
 // init modules
 mobileHeight();
@@ -25,6 +26,7 @@ social();
 loadPage();
 rules();
 prizes();
+counter();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
